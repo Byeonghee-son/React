@@ -1,25 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-
+//import Hello from './01/Hello'; //헬로우 불러오기
+//import MyClock from './02/MyClock';
+import Box from './03/Box'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return (    //라턴안에는 태그 한개만 존재 자식은 상관없음
+   // <Hello />  //끝에 슬래쉬 꼭 해줘야함
+    //<MyClock />
+    <Box /> 
+     );
 }
 
 export default App;
