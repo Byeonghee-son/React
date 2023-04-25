@@ -1,14 +1,7 @@
-import { useState } from "react";
-
 //const BoxRows = (probs) => {
 const BoxRows = ({mv}) => {
   //  const mvlist = [...probs.mv];
 console.log("boxRows",mv);
-const [footTag, setFootTag] = useState('');
-const showMv = (row) => {console.log(row);}
-setFootTag();
-
-
 
 let trTags = [];
     for(let row of mv){
@@ -22,7 +15,7 @@ let trTags = [];
             icon = '🔻';
         };
        trTags.push(
-        <tr className="mytr" key={row.movieCd} onClick={()=>showMv(row)}>
+        <tr className="mytr" key={row.movieCd}>
         <td>{row.rank}</td>
         <td>{row.movieNm}</td>
         <td>{parseInt(row.salesAmt).toLocaleString()}</td>
@@ -33,15 +26,7 @@ let trTags = [];
     console.log(trTags);
     return(
         <>
-        <tbody>
             {trTags}
-        </tbody>
-        <tfoot>
-            <tr>
-            <td colSpan={4}>{footTag}</td>
-            </tr>
-        </tfoot>
-            
         </>
     );
 }
