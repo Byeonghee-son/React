@@ -3,18 +3,17 @@
 // import './MyDiv.css';
 import style from './MyDiv.module.css';
 import { useState } from 'react';  //state 변수 사용 1단계
+import React from 'react';
 
 const MyDivArticle = ({ aname }) => {
     //const aname = probs.aname;
     let n = (aname === undefined) ? '0' : aname.slice(-1);
-    //let cnt = 0;
-    const setCnt: React.Dispatch<React.SetStateAction<number>>
     const [cnt, setCnt] = useState(0);  //state 변수 사용 2단계 무조건 배열사용!!
     
     
     
     //Click 이벤트 처리
-    const like = (n)=>{
+    const like = ()=>{
        // cnt = cnt +2;
        setCnt(cnt+1);  //state 변수 사용 3단계 :변수 내용 변경
         console.log(cnt+1)}
@@ -23,8 +22,8 @@ const MyDivArticle = ({ aname }) => {
         <article>
             <header><h1 className={style.mah1}>{aname || 'MyDiv0'}</h1></header>
             <ul className={style.aul}>
-                <li className={style.ali}>{n === '0' ? 'MyDiv0' : 'MyDiv' + n}1 </li>
-                <li className={style.ali}>{'MyDiv' + n}2</li>
+                <li className={style.ali}>{n === '0' ? 'MyDiv0' : 'MyDiv' + n} </li>
+                <li className={style.ali}>{'MyDiv' + n}</li>
             </ul>
             {n ==='1' &&            
             <footer>

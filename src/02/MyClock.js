@@ -6,7 +6,7 @@ const MyClock = () =>{
 
     return(
     <main className="container">
-        <article data-thema="dark">
+        <article data-theme="dark">
             <MyClockImage />
             <MyClockTime  />
 

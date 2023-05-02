@@ -1,0 +1,9 @@
+tfoot > tr > td{
+    text-decoration: solid;
+    justify-content: center;
+    align-items: center;
+}
+tfoot{
+    
+    background-color: lightblue;
+}

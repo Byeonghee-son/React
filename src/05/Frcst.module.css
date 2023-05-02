@@ -1,0 +1,43 @@
+.dt{
+    display:inline-flex;
+    width: 30%px;
+    background-color: palegoldenrod;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 20px;
+}
+
+.dt1{
+    display:inline-flex;
+    width: 30%px;
+    background-color: sandybrown;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 20px;
+}
+
+.dt:hover{
+    background-color: sandybrown;
+    
+}
+
+h1 {
+    color: palegoldenrod;
+    text-align: center;
+}
+
+.sp1 .sp2{
+    font-weight: bold;
+}
+
+.sp21{
+    color: blue;
+}
+.sp22{
+    color: yellowgreen;
+}
+.sp23{
+    color: red;
+}
