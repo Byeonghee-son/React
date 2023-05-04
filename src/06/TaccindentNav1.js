@@ -1,4 +1,4 @@
-
+import style from './Taccident.module.css'
 const TaccindentNav1 = ({c1,sel1,setSel1}) => {
 
     console.log(c1);
@@ -15,9 +15,9 @@ const TaccindentNav1 = ({c1,sel1,setSel1}) => {
     return (
         <nav>
             <ul>
-                <h2>사고유형 대분류</h2>
+                <h2 className={style.txt}>사고유형 대분류</h2>
             </ul>
-            <ul>
+            <ul className={style.bt}>
                 {btTag}           
             </ul>
         </nav>

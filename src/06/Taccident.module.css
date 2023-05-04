@@ -1,0 +1,21 @@
+nav button {
+    background-color:darkblue;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+nav button.active {
+    background-color: #f00;
+  }
+.txt{
+    font-size: large;
+}
+
+.detail{
+    font-display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color:snow
+}
