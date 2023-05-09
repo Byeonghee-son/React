@@ -1,0 +1,8 @@
+.s1{
+    display: inline-flex;
+    background-color:slateblue;
+    color: yellow;
+    border-radius: 10%;
+    margin: 20px;
+    font-size: 30px;
+}
