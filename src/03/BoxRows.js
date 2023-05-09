@@ -11,7 +11,7 @@ const BoxRows = ({ mv }) => {
 
     //클릭된 자료 확인
     const showMv = (row) => {
-        setFootTag("영화제목: " + row.movieNm + "개봉일: " + row.openDt);
+        setFootTag(row.movieCd + "영화제목: " + row.movieNm + "개봉일: " + row.openDt);
         console.log(row);
     }
 
