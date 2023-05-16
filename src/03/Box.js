@@ -34,7 +34,7 @@ const Box = () => {
         console.log("seldt=" , seldt);
         getData(seldt);
 
-        let url = 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt='
+        let url = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt='
         url = url + seldt;
         console.log("url =", url)
         
@@ -44,7 +44,7 @@ const Box = () => {
         .catch((err)=> console.log(err))
     }
     const getData = (seldt) => {
-        let url = 'http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt='
+        let url = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=f5eef3421c602c6cb7ea224104795888&targetDt='
         url = url + seldt;
         console.log("url =", url)
         
