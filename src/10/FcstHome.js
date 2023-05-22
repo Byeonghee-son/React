@@ -7,25 +7,68 @@ const FcstHome = () => {
             {item["1단계"]}
             </option>
     );
-const [data, setData] = useState();
-const date = useRef();
-const sel = useRef();
+    const [dt, setDt] = useState() ;
+    const [area, setArea] = useState() ;
+    const [x, setX] = useState() ;
+    const [y, setY] = useState() ;
 
-const getData = () => {
+    const txt1= useRef();
+    const sel1= useRef();
+
+    const getUltraSrtData = (date,nx,ny) => {
     let apikey = `XS8eW5EMlErdabDbGqkAgxVFaDgJk%2FO7Pd8JVGkPtcJxDjQIPoZoJB4MtCQ28zXdFZuGjfmpmYP1fAvojYlWsg%3D%3D`
-    let url = 
-}
+    let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?&pageNo=1&numOfRows=1000&dataType=json&base_time=0500`
+    url = url + `&serviceKey=${apikey}`
+    url = url + `&base_date=${date}`
+    url = url + `&nx=${nx}`
+    url = url + `&ny=${ny}`
 
+    console.log(url)
+
+ 
+    };
+
+const getVilageData = (date,nx,ny) => {
+    let apikey = `XS8eW5EMlErdabDbGqkAgxVFaDgJk%2FO7Pd8JVGkPtcJxDjQIPoZoJB4MtCQ28zXdFZuGjfmpmYP1fAvojYlWsg%3D%3D`
+    let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?&pageNo=1&numOfRows=1000&dataType=json&base_time=0500`
+    url = url + `&serviceKey=${apikey}`
+    url = url + `&base_date=${date}`
+    url = url + `&nx=${nx}`
+    url = url + `&ny=${ny}`
+
+    console.log(url)
+
+ 
+};
+    getUltraSrtData(date,nx,ny);
+    getVilageData(date,nx,ny);
+
+    useEffect(()=>{
+        console.log(dt)
+    },[dt])
+
+    const getDt = () => {
+        let tdt = txt1.current.value;
+        tdt = tdt.replaceAll('-','');
+        setDt(tdt);
+    }
+    const getSel = () => {
+        let temp = xy.filter((item) => item["행정구역코드"] ===parseInt(sel1.current.value))[0] ;
+        console.log(temp);
+        setArea(temp["1단계"]);
+        setX(temp["격자 X"]);
+        setY(temp["격자 Y"]);
+    }
 
     return (
         <article>
             <header>단기예보 정보 선택</header>
             <div className="grid">
                 <div>
-                    <input type="date" id="date" name="date" />
+                    <input ref={txt1} type="date" id="date" name="date" onChange={()=>getDt()} />
                 </div>
                 <div>
-                <select id="sel" name="sel">
+                <select ref={sel1} id="sel" name="sel" onChange={()=>getSel()}>
                     <option value="" selected>지역을 선택하세요</option>
                     {ops}
                 </select>
@@ -33,8 +76,8 @@ const getData = () => {
             </div>
             <footer>
                 <div className="grid">
-                    <Link to='/ultra' role='button'>초단기예보</Link>
-                    <Link to='/vilage' role='button'>단기예보</Link>
+                    <Link to={`/ultra/${dt}/${area}/${x}/${y}`} role='button'>초단기예보</Link>
+                    <Link to={`/vilage/${dt}/${area}/${x}/${y}`} role='button'>단기예보</Link>
                 </div>
             </footer>
         </article>

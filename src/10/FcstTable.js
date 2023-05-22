@@ -1,7 +1,7 @@
 const FcstTable = () => {
 
     return (
-        <article>
+      
             <table>
                 <thead>
                     <tr>
@@ -12,7 +12,7 @@ const FcstTable = () => {
                     </tr>
                 </thead>
             </table>
-        </article>
+        
     )
 }
 export default FcstTable;
