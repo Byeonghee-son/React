@@ -20,16 +20,16 @@ const UltraSrtFcst = () =>{
             console.log(url)
 
             fetch(url)
-            .then((resp) => resp.json())
-            .then(data => setFdata(data.response.body.items))
+            .then(response => response.json())
+            .then(data=>{setFdata(data)})
             .catch(err => {
                 console.error(err)
             })
     },[dt,area,x,y]);
     return(
         <article>
-            <header>{area}</header>
-            {fdata && <FcstTable fdata={fdata} gubun="초단기예보" /> }
+            <header>기상청 초단기예보</header>
+            <FcstTable data={fdata}/>
         </article>
     )
 }

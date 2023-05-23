@@ -15,7 +15,47 @@ const FcstHome = () => {
     const txt1= useRef();
     const sel1= useRef();
 
-   
+    const getUltraSrtData = (dt,x,y) => {
+    let apikey = `XS8eW5EMlErdabDbGqkAgxVFaDgJk%2FO7Pd8JVGkPtcJxDjQIPoZoJB4MtCQ28zXdFZuGjfmpmYP1fAvojYlWsg%3D%3D`
+    let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?&pageNo=1&numOfRows=1000&dataType=json&base_time=0500`
+    url = url + `&serviceKey=${apikey}`
+    url = url + `&base_date=${dt}`
+    url = url + `&nx=${x}`
+    url = url + `&ny=${y}`
+
+    console.log(url)
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data=>{setDt(data.response.body.items.item),setArea(data.response.body.items.item),setX(data.response.body.items.item),setY(data.response.body.items.item)})
+    .catch(err => {
+        console.error(err)
+    })
+
+ 
+    };
+
+const getVilageData = (dt,x,y) => {
+    let apikey = `XS8eW5EMlErdabDbGqkAgxVFaDgJk%2FO7Pd8JVGkPtcJxDjQIPoZoJB4MtCQ28zXdFZuGjfmpmYP1fAvojYlWsg%3D%3D`
+    let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?&pageNo=1&numOfRows=1000&dataType=json&base_time=0500`
+    url = url + `&serviceKey=${apikey}`
+    url = url + `&base_date=${dt}`
+    url = url + `&nx=${x}`
+    url = url + `&ny=${y}`
+
+    console.log(url)
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data=>{setDt(data.response.body.items.item),setArea(data.response.body.items.item),setX(data.response.body.items.item),setY(data.response.body.items.item)})
+    .catch(err => {
+        console.error(err)
+    })
+
+ 
+};
+    getUltraSrtData(dt,x,y);
+    getVilageData(dt,x,y);
 
     useEffect(()=>{
         console.log('dt', dt)
@@ -43,7 +83,7 @@ const FcstHome = () => {
                 </div>
                 <div>
                 <select ref={sel1} id="sel" name="sel" onChange={()=>getSel()}>
-                    <option value="">지역을 선택하세요</option>
+                    <option value="" selected>지역을 선택하세요</option>
                     {ops}
                 </select>
                 </div>
