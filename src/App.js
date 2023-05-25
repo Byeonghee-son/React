@@ -9,8 +9,8 @@ import './App.css';
 //import Gallery from './08/Gallery'
 // import Gallery from './081/Gallery'
 // import WeatherMain from './09/WeatherMain';
-import Fcst from './10/Fcst';
-
+//import Fcst from './10/Fcst';
+import Fcst from './101/Fcst';
 
 
 function App() {
