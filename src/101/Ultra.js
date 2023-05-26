@@ -14,7 +14,7 @@ const Ultra = () => {
         url = url + 'serviceKey=XS8eW5EMlErdabDbGqkAgxVFaDgJk%2FO7Pd8JVGkPtcJxDjQIPoZoJB4MtCQ28zXdFZuGjfmpmYP1fAvojYlWsg%3D%3D'
         url = url + '&numOfRows=60'
         url = url + '&pageNo=1'
-        url = url + '&base_date=20230524'
+        url = url + '&base_date=20230526'
         url = url + '&base_time=0500'
         url = url + '&nx=55'
         url = url + '&ny=127'

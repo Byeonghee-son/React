@@ -10,8 +10,8 @@ import './App.css';
 // import Gallery from './081/Gallery'
 // import WeatherMain from './09/WeatherMain';
 //import Fcst from './10/Fcst';
-import Fcst from './101/Fcst';
-
+//import Fcst from './101/Fcst';
+import CodeView from './102/CodeView';
 
 function App() {
   return (    //라턴안에는 태그 한개만 존재 자식은 상관없음
@@ -24,7 +24,8 @@ function App() {
     // <MyRef />
     // <Gallery />
     // <WeatherMain />
-    <Fcst />
+    //<Fcst />
+    <CodeView />
   );
 }
 
