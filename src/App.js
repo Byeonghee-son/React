@@ -1,4 +1,5 @@
 import './App.css';
+
 // import Hello from './01/Hello'; //헬로우 불러오기
 // import MyClock from './02/MyClock';
 // import Box from './03/Box';
@@ -11,8 +12,8 @@ import './App.css';
 // import WeatherMain from './09/WeatherMain';
 //import Fcst from './10/Fcst';
 //import Fcst from './101/Fcst';
-import CodeView from './102/CodeView';
-
+// import CodeView from './102/CodeView';
+import Cnt from './111/Cnt';
 function App() {
   return (    //라턴안에는 태그 한개만 존재 자식은 상관없음
     // <Hello />  //끝에 슬래쉬 꼭 해줘야함
@@ -25,7 +26,10 @@ function App() {
     // <Gallery />
     // <WeatherMain />
     //<Fcst />
-    <CodeView />
+    // <CodeView />
+   
+    <Cnt />
+    
   );
 }
 
